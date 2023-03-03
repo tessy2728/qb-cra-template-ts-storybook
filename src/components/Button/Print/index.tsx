@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Button, { IButton } from "../button";
+import Button, { IButton } from "../component";
 
 interface IPrintButton extends IButton {
 

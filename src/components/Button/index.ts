@@ -1,1 +1,3 @@
-export { default as Button } from "./button"
+import Button from './component';
+
+export default Button;

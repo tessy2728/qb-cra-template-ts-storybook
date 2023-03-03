@@ -1,5 +1,5 @@
 import React, { FC, useState, useRef, Ref, RefObject, useEffect } from "react";
-import Button, { IButton } from "../button";
+import Button, { IButton } from "../component";
 import {
     useParams,
     useLocation
