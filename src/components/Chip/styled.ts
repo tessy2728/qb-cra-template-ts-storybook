@@ -1,13 +1,13 @@
 import styled from "styled-components";
 // import {colors} from '../../../hooks/tailwind/useTailwind';
 
-interface ITag {
+interface IChip {
     bgColor: string;
     color: string;
     dotBgColor?: string;
 }
 
-const Tag = styled.span<ITag>`
+const Chip = styled.span<IChip>`
     margin: 0 0 1px;
     border-radius: 1.4rem;
     background-color: ${p => p.bgColor ? p.bgColor : '#ffe17e'};
@@ -22,4 +22,4 @@ const Tag = styled.span<ITag>`
     }`
 
 
-export default Tag
+export default Chip

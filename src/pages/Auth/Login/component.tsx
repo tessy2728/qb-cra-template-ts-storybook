@@ -5,7 +5,7 @@ import Loader from '../../../components/Loader';
 import { signIn } from '../slice';
 import { selectAuthDomain } from '../slice/selectors';
 import Wrapper from './style';
-
+import Button from '../../../components/Button';
 const LoginComponent: FC<any> = (props) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -61,9 +61,9 @@ const LoginComponent: FC<any> = (props) => {
                         onChange={onChange}
                         autoComplete="current-password"
                     />
-                    <button type="submit" disabled={!email || !password}>
-                        Sign in
-                    </button>
+                    <Button type="submit" title="Sign in" variant="outlined" themeColor="primary" disabled={!email || !password}>
+
+                    </Button>
                 </form>
                 <p className="error">{loginError}</p>
                 <div className="signup">

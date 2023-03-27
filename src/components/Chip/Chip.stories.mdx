@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ChipVariants from './variants';
+import * as ChipStories from './Chip.stories';
+
+<Meta title="Basic UI/Chip" component={ChipVariants} />
+
+export const Template = (args) => <ChipVariants {...args } />
+
+# Chip
+Chips are compact elements that represent an input, attribute, or action.
+
+## How to use?
+
+```
+import Chip from './components/Chip';
+
+const chipConfig = { 
+        bgColor: colors.LIGHT_RED,
+    color: colors.DARK_RED,
+    value: "Deleted"
+}
+
+<Chip {...chipConfig}/>
+```
+
+<Story
+  name="All"
+  args={{
+    tags: [{ 
+        bgColor: ChipStories.DeletedChip.args?.bgColor,
+        color: ChipStories.DeletedChip.args?.color,
+        value: ChipStories.DeletedChip.args?.value
+    },{ 
+        bgColor: ChipStories.PlannedChip.args?.bgColor,
+        color: ChipStories.PlannedChip.args?.color,
+        value: ChipStories.PlannedChip.args?.value
+    },{ 
+        bgColor: ChipStories.OverdueChip.args?.bgColor,
+        color: ChipStories.OverdueChip.args?.color,
+        value: ChipStories.OverdueChip.args?.value
+    },{ 
+        bgColor: ChipStories.CompletedChip.args?.bgColor,
+        color: ChipStories.CompletedChip.args?.color,
+        value: ChipStories.CompletedChip.args?.value
+    }
+    ]
+  }}>
+  {Template.bind({})}
+</Story>

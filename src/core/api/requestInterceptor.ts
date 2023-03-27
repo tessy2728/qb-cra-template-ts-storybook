@@ -7,7 +7,7 @@ export const onRequest = (config: AxiosRequestConfig) => {
     config.headers = {
         'Content-type': 'application/json',
         ...config.headers,
-        ...headers,
+        ...headers
     };
     return config;
 };

@@ -82,7 +82,7 @@ export function isGreaterThanZero(element: any) {
   return !isEmptyValue(element) && parseInt(element) > 0;
 }
 
-export const isEmptyJSON = (json:object) => {
+export const isEmptyJSON = (json: object) => {
   return json && Object.keys(json).length === 0 && Object.getPrototypeOf(json) === Object.prototype
 }
 
@@ -200,7 +200,37 @@ export const cleanURl = (str: string) => {
 }
 
 const removeWhiteSpaces = (value: string) => {
-  if(value?.replaceAll) return value?.replaceAll(' ','');
+  if (value?.replaceAll) return value?.replaceAll(' ', '');
+}
+
+const getDate = (start: Date) => start.toLocaleDateString('en-GB', {
+  year: 'numeric',
+}) +
+  '-' +
+  start.toLocaleDateString('en-GB', {
+    month: '2-digit',
+  }) +
+  '-' +
+  start.toLocaleDateString('en-GB', {
+    day: '2-digit',
+  })
+
+const getDateRange = (duration: string, numberOf: number) => {
+  const currentDate = new Date();
+  let start;
+  switch (duration) {
+    case 'year':
+      start = new Date(new Date().setFullYear(currentDate.getFullYear() - numberOf));
+      break;
+    case 'month':
+      start = new Date(new Date().setMonth(currentDate.getMonth() - numberOf))
+      break;
+    case 'days':
+    default:
+      start = new Date(new Date().setDate(currentDate.getDate() - numberOf))
+      break;
+  }
+  return { startDate: getDate(start), endDate: getDate(currentDate) }
 }
 
 export {

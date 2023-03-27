@@ -38,26 +38,6 @@ const Wrapper = styled.section`
                 outline: none;
             }
         }
-
-        button {
-            width: 100%;
-            padding: 7px 6px;
-            margin: 10px;
-            background: #2990a3;
-            color: #fff;
-            cursor: pointer;
-            border: 1px solid #2990a3;
-            border-radius: 3px;
-            &:hover {
-                box-shadow: 1px 1px #2990a3;
-            }
-
-            &:disabled {
-                opacity: 0.5;
-                cursor: default;
-                box-shadow: none;
-            }
-        }
     }
     .signup {
         background: #ececec;

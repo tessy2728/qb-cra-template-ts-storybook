@@ -45,6 +45,16 @@ const session = createSlice({
             state.loginError = '';
         },
         updateLoginSuccess(state, action) {
+            // const { first_name, last_name, email, role } = action.payload;
+            // const name = `${first_name} ${last_name}`
+            // setUserSession({ name: name, userDetails: { first_name, last_name, email, role } });
+            // state = {
+            //     ...state,
+            //     name: name,
+            //     userDetails: { first_name, last_name, email, role },
+            //     isSignedIn: true,
+            //     loading: false
+            // };
             const { result, token } = action.payload;
             setUserSession({ name: result.name, accessToken: token, userDetails: result });
             state = {

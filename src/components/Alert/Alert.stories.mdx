@@ -1,0 +1,83 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import AlertVariants from './variants';
+import * as AlertStories from './Alert.stories';
+
+<Meta title="Basic UI/Alert" component={AlertVariants} />
+
+export const Template = (args) => <AlertVariants {...args } />
+
+# Alert
+An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
+
+## How to use?
+```
+import Alert from './components/Alert';
+
+const alertConfig = {
+  message: 'Article has been added successfully.',
+  type:'success'
+}
+
+<Alert {...alertConfig}/>
+```
+
+<Story
+  name="All"
+  args={{
+    alertConfigs: [
+        { message: AlertStories.Success?.args?.message, type: AlertStories.Success.args?.type },
+        { message: AlertStories.Error?.args?.message, type: AlertStories.Error.args?.type },
+        { message: AlertStories.Warning?.args?.message, type: AlertStories.Warning.args?.type },
+        { message: AlertStories.Info?.args?.message, type: AlertStories.Info.args?.type }
+    ]
+  }}>
+  {Template.bind({})}
+</Story>
+
+## How to use with local state?
+```
+import Alert from './components/Alert';
+import {useState} from 'react';
+
+
+
+const [alertConfig, setAlertConfig] = useState({
+  message: '',
+  type:''
+});
+
+//call this on an action to show Alert
+const onShowAlert = () => {
+  const alertConfig = {
+    message: 'Article has been added successfully.',
+    type:'success'
+  };
+  setAlertConfig(alertConfig);
+};
+
+const hideAlert = () => setAlertConfig({
+  message: '',
+  type:''
+})
+
+{alertConfig.message && <Alert {...alertConfig} clearAlert={hideAlert}/>}
+```
+
+
+## How to use with global state?
+```
+import Alert from './components/Alert';
+import { hideToaster } from './slices/toaster.slice';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from './store/interfaces/store';
+
+const alertConfig = useSelector((state: RootState) => state.toaster);
+const dispatch = useDispatch();
+
+const hideAlert = () => dispatch(hideToaster());
+
+<Alert {...alertConfig} clearAlert={hideAlert}/>
+```
+
+

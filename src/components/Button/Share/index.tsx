@@ -1,9 +1,9 @@
 import React, { FC, useState, useRef, Ref, RefObject, useEffect } from "react";
 import Button, { IButton } from "../component";
 import {
-    useParams,
     useLocation
-} from "react-router-dom"; import ModalTooltip from '../../ModalTooltip';
+} from "react-router-dom";
+import ModalTooltip from '../../ModalTooltip';
 import {
     FacebookShareButton,
     FacebookIcon,
@@ -22,7 +22,7 @@ import {
 } from 'react-share'
 
 interface IShareButton extends IButton {
-    getShareData?: Function;
+    getShareData?: () => void;
 }
 
 const ShareButton: FC<IShareButton> = (props) => {
@@ -39,7 +39,7 @@ const ShareButton: FC<IShareButton> = (props) => {
 
     const onClick = async () => {
         toggleModal(true);
-        let shareInfo = (props.getShareData && props.getShareData()) ?? {
+        const shareInfo = (props.getShareData && props.getShareData()) ?? {
             title: 'Evaluation Resource Centre',
             desc: 'Evaluation Resource Center',
             url: `${process.env.APP_BASE_URL}${location.pathname}`
@@ -62,7 +62,7 @@ const ShareButton: FC<IShareButton> = (props) => {
                 title='SHARE'
                 variant={variant}
                 className={`ml-[1.25rem] !bg-primary-400 !px-[1.5rem] !py-[1.2rem] items-center flex ${className} hover:!bg-primary-600 hover:text-white`}
-                endIcon={
+                startIcon={
                     <div className="relative h-[1.5rem] w-[1.5rem] ml-3" >
                         <img src={"/images/share.svg"} alt="Share Icon" />
                     </div>

@@ -19,7 +19,7 @@ const ArticleList = () => {
 
     return <div className="flex flex-column">
         <p className="text-left">Here are some articles for you:</p>
-        <div className="grid grid-cols-3">{articles.filter((article: IArticle) => article.user_id == userId).map((article: IArticle) => <ArticleCard key={article.id} article={article} />)}</div>
+        <div className="grid grid-cols-3">{articles?.filter((article: IArticle) => article.user_id == userId).map((article: IArticle) => <ArticleCard key={article.id} article={article} />)}</div>
     </div>;
 };
 

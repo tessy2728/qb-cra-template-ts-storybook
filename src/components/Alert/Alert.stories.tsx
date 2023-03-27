@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
 import Alert from '.';
 
@@ -10,17 +10,18 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
-  },
+  }
 } as ComponentMeta<typeof Alert>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 
+
 export const Success = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Success.args = {
   type: 'success',
-  message: 'Article created successfully'
+  message: 'Article created successfully.'
 };
 
 export const Error = Template.bind({});

@@ -4,6 +4,7 @@ const SESSION_NAME = 'qb-react-ts-boilerplate.session'; //Replace app with Proje
 
 export const setUserSession = (data: AuthState) => {
     localStorage.setItem(SESSION_NAME, JSON.stringify(data));
+    console.log(data.accessToken)
     document.cookie = "AccessToken=" + data.accessToken;
 };
 
@@ -13,8 +14,8 @@ export const getUserSession = () => {
 };
 
 export const removeUserSession = () => {
-    localStorage.removeItem(SESSION_NAME);
     document.cookie = "AccessToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    localStorage.removeItem(SESSION_NAME);
 };
 
 export const getAccessToken = () => getCookie('AccessToken');
@@ -23,4 +24,4 @@ export const getUserName = () => getUserSession().name;
 
 export const getUserId = () => getUserSession().userDetails?.id;
 
-export const isLoggedIn = () => !!document.cookie;
+export const isLoggedIn = () => !!getCookie('AccessToken');

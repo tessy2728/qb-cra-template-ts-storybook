@@ -73,7 +73,7 @@ const articleSlice = createSlice({
         },
         setArticleDetails(state, action) {
             const { meta } = action as IThunkResponse;
-            state.articleDetails[meta.arg] = action.payload.result[0]
+            state.articleDetails[meta.arg] = action.payload
             state.articleDetails[meta.arg].status = 'fulfilled';
         },
         endArticleFetching(state, action) {

@@ -19,7 +19,7 @@ export interface User {
 
 export interface AuthState {
     name: string;
-    accessToken: string;
+    accessToken?: string;
     isSignedIn?: boolean;
     loading?: boolean;
     loginError?: string;

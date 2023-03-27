@@ -46,6 +46,12 @@ const GlobalStyle = createGlobalStyle`
   .align-center {
     align-items:center;
   }
+  .hidden {
+    display:none;
+  }
+  .mr-[4px] {
+    margin-right:4px;
+  }
 `;
 
 export default {
