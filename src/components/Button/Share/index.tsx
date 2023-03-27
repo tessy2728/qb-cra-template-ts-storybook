@@ -71,7 +71,7 @@ const ShareButton: FC<IShareButton> = (props) => {
                 {...rest}
             />
             <ModalTooltip isOpen={isModalOpen} title="Share Via" setOpen={toggleModal} ref={modalRef} isClosable={true} className="bottom-[73px] left-0 mob:left-auto mob:top-20 mob:bottom-auto" contentClassName=" w-full mob:w-96">
-                <FacebookShareButton
+                <div className="grid grid-cols-5"> <FacebookShareButton
                     url={shareData.url}
                     quote={shareData.title}
                     title={shareData.title}
@@ -80,68 +80,68 @@ const ShareButton: FC<IShareButton> = (props) => {
                         <FacebookIcon size={32} round />
                     </div>
                 </FacebookShareButton>
-                <WhatsappShareButton
-                    url={shareData.url}
-                    title={shareData.title}
-                    separator=":: "
-                >
-                    <div className="m-5">
+                    <WhatsappShareButton
+                        url={shareData.url}
+                        title={shareData.title}
+                        separator=":: "
+                    >
+                        <div className="m-5">
 
-                        <WhatsappIcon size={32} round />
-                    </div>
-                </WhatsappShareButton>
-                <TwitterShareButton
-                    url={shareData.url}
-                    title={shareData.title}
-                >
-                    <div className="m-5">
-                        <TwitterIcon size={32} round />
-                    </div>
-                </TwitterShareButton>
-                <TelegramShareButton
-                    url={shareData.url}
-                    title={shareData.title}
-                >
-                    <div className="m-5">
+                            <WhatsappIcon size={32} round />
+                        </div>
+                    </WhatsappShareButton>
+                    <TwitterShareButton
+                        url={shareData.url}
+                        title={shareData.title}
+                    >
+                        <div className="m-5">
+                            <TwitterIcon size={32} round />
+                        </div>
+                    </TwitterShareButton>
+                    <TelegramShareButton
+                        url={shareData.url}
+                        title={shareData.title}
+                    >
+                        <div className="m-5">
 
-                        <TelegramIcon size={32} round />
-                    </div>
-                </TelegramShareButton>
-                <PinterestShareButton
-                    url={shareData.url}
-                    media={shareData.title}
-                >
-                    <div className="m-5">
+                            <TelegramIcon size={32} round />
+                        </div>
+                    </TelegramShareButton>
+                    <PinterestShareButton
+                        url={shareData.url}
+                        media={shareData.title}
+                    >
+                        <div className="m-5">
 
-                        <PinterestIcon size={32} round />
-                    </div>
-                </PinterestShareButton>
-                <EmailShareButton
-                    url={shareData.url}
-                    body={shareData.desc}
-                    subject={shareData.title}
-                >
-                    <div className="m-5">
+                            <PinterestIcon size={32} round />
+                        </div>
+                    </PinterestShareButton>
+                    <EmailShareButton
+                        url={shareData.url}
+                        body={shareData.desc}
+                        subject={shareData.title}
+                    >
+                        <div className="m-5">
 
-                        <EmailIcon size={32} round />
-                    </div>
-                </EmailShareButton>
-                <FacebookMessengerShareButton
-                    url={shareData.url}
-                    title={shareData.title}
-                    appId={''}
-                >
-                    <div className="m-5">
-                        <FacebookMessengerIcon size={32} round />
-                    </div>
-                </FacebookMessengerShareButton>
-                <LinkedinShareButton url={shareData.url}
-                    title={shareData.title}>
-                    <div className="m-5">
+                            <EmailIcon size={32} round />
+                        </div>
+                    </EmailShareButton>
+                    <FacebookMessengerShareButton
+                        url={shareData.url}
+                        title={shareData.title}
+                        appId={''}
+                    >
+                        <div className="m-5">
+                            <FacebookMessengerIcon size={32} round />
+                        </div>
+                    </FacebookMessengerShareButton>
+                    <LinkedinShareButton url={shareData.url}
+                        title={shareData.title}>
+                        <div className="m-5">
 
-                        <LinkedinIcon size={32} round />
-                    </div>
-                </LinkedinShareButton>
+                            <LinkedinIcon size={32} round />
+                        </div>
+                    </LinkedinShareButton></div>
             </ModalTooltip>
         </>
     )

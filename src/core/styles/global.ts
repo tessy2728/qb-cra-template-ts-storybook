@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   }
   
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
   .flex {
     display:flex;
   } 
@@ -43,12 +47,23 @@ const GlobalStyle = createGlobalStyle`
   .flex-column {
     flex-direction: column;
   }
-  .align-center {
+
+  .align-center, .items-center {
     align-items:center;
   }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
   .hidden {
     display:none;
   }
+  
   .mr-[4px] {
     margin-right:4px;
   }

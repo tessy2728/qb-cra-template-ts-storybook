@@ -2,7 +2,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ButtonVariants from './variants';
-import * as ButtonStories from './Button.stories';
+import * as ButtonStories from './stories';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -31,7 +31,6 @@ All.args = {
     }, {
         title: ButtonStories.ContainedButtonWithTheme.args?.title,
         variant: ButtonStories.ContainedButtonWithTheme.args?.variant,
-        // disabled: ButtonStories.ContainedButtonWithTheme.args?.disabled,
         themeColor: ButtonStories.ContainedButtonWithTheme.args?.themeColor
     }, {
         title: ButtonStories.OutlinedButton.args?.title,
@@ -44,7 +43,6 @@ All.args = {
     }, {
         title: ButtonStories.OutlinedButtonWithTheme.args?.title,
         variant: ButtonStories.OutlinedButtonWithTheme.args?.variant,
-        // disabled: ButtonStories.OutlinedButtonWithTheme.args?.disabled,
         themeColor: ButtonStories.OutlinedButtonWithTheme.args?.themeColor
     }],
 };

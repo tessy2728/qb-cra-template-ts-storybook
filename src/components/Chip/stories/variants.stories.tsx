@@ -2,7 +2,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ChipVariants from './variants';
-import * as ChipStories from './Chip.stories';
+import * as ChipStories from './stories';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

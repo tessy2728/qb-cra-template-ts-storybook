@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Alert from '.';
-import { hideToaster } from '../../slices/toaster.slice';
+import Alert from '..';
+import { hideToaster } from '../../../slices/toaster.slice';
 
 function AlertVariants({ alertConfigs }: any) {
     const dispatch = useDispatch();

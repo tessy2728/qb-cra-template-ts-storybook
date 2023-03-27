@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import Alert from '.';
+import Alert from '..';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

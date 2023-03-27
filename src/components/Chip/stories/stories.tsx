@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import * as colors from '../../core/config/colors';
-import Chip from '.';
+import * as colors from '../../../core/config/colors';
+import Chip from '..';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

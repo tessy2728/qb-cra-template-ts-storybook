@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import * as colors from '../../core/config/colors';
-import Button from '.';
-import ShareButton from './Share';
+import * as colors from '../../../core/config/colors';
+import Button from '..';
+import ShareButton from '../Share';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
