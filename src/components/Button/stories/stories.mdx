@@ -1,0 +1,26 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ButtonVariants from './variants';
+import * as ButtonStories from './stories';
+
+<Meta title="Basic UI/Button" component={ButtonVariants} />
+
+export const Template = (args) => <ButtonVariants {...args } />
+
+# Button
+An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
+
+## How to use?
+```
+import Button from './components/Button';
+
+<Button title="Sign In" variant="outlined" themeColor="red"/>
+```
+
+<Story
+  name="All"
+  args={{
+    title:"Sign In", variant:"outlined", themeColor: "red"
+  }}>
+  {Template.bind({})}
+</Story>
